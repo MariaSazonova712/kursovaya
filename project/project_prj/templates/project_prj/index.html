@@ -1,0 +1,40 @@
+{% extends 'project_prj/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="zalogo"><h1>Список товаров</h1></div>
+<div class="search-container">
+  <div class="form">
+
+  </div>
+</div>
+
+<div class="container">
+    <div class="freezing">
+        <body>
+        {% if tasks %}
+        {% for elem in tasks %}
+        <div class="freezing-cont">
+            <img src="{{ elem.photo_url }}" alt="Фото">
+            <h2>{{ elem.name }}</h2>
+            <h2>Цена: {{ elem.price }} руб. (за кг)</h2>
+            <input type="button" value="Подробнее"
+                   class="add-to-cart-btn"
+                   onclick="location.href = '{% url 'product-detail' elem.id %}'">
+
+        </div>
+
+        {% endfor %}
+
+        {% else %}
+
+        <h2>Нет данных о товарах</h2>
+        {% endif %}
+        </body>
+
+
+        {% endblock %}

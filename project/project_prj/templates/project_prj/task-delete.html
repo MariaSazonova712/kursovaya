@@ -1,0 +1,10 @@
+{% extends 'project_prj/base.html' %
+{% block title %}Удаление статьи
+{% endblock %}
+{% block content %}<div class="features">
+    <h1>Удаление статьи</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Действительно хотите удалить запись?</p>
+        <button class="btn-success" type="submit">Удалить статью</button>    </form>
+</div>{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'project_prj/base.html' %}
+
+{% block title %}
+Подробнее о товаре
+{% endblock %}
+
+
+{% block content %}
+<h2>Подробнее о товаре</h2>
+<img src="{{ object.photo_url }}" alt="Фото">
+<table class="table-orders">
+<tr>
+    <th>Параметр</th>
+    <th>Значение</th>
+</tr>
+<tr><td>Номер:</td><td>{{ object.number }}</td></tr>
+<tr class="table-orders__is-active"><td>Название:</td><td>{{ object.name }}</td></tr>
+<tr class="table-orders__is-active"><td>Производитель:</td><td>{{ object.manufacturer }}</td></tr>
+<tr><td>Цена:</td><td>{{ object.price }}</td></tr>
+<tr><td>Количество:</td><td>{{ object.quantity }}</td></tr>
+</table>
+{% endblock %}
